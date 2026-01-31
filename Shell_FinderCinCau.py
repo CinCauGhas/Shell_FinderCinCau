@@ -2,6 +2,7 @@
 import requests
 import sys
 import time
+import os
 
 # ================== COLOR ==================
 RED   = "\033[1;31m"
@@ -30,17 +31,17 @@ GitHub : https://github.com/CinCauGhas
 {RESET}
 """)
 
-# ================== PAYLOAD ==================
-SHELL_PAYLOADS = [
-    "shell.php",
-    "ws.php",
-    "cmd.php",
-    "upload.php",
-    "adminer.php",
-]
+# ================== LOAD PAYLOAD ==================
+def load_payloads():
+    payload_file = "payloads/shell_payloads.txt"
+    if not os.path.exists(payload_file):
+        print(f"{RED}PAYLOAD FILE NOT FOUND : {payload_file}{RESET}")
+        sys.exit(1)
 
-for i in range(1, 81):
-    SHELL_PAYLOADS.append(f"ws{i}.php")
+    with open(payload_file, "r") as f:
+        return [line.strip() for line in f if line.strip()]
+
+SHELL_PAYLOADS = load_payloads()
 
 # ================== INPUT ==================
 if len(sys.argv) != 2:
@@ -71,7 +72,7 @@ for payload in SHELL_PAYLOADS:
 # ================== RESULT ==================
 print("\n====================")
 if found:
-    print(f"{RED}SCAN SELESAI - SHELL DITEMUKAN (EDUCATIONAL){RESET}")
+    print(f"{RED}SCAN SELESAI - SHELL DITEMUKAN {RESET}")
 else:
     print(f"{WHITE}TIDAK MENEMUKAN SHELL YANG VALID{RESET}")
 print("====================")
