@@ -3,4 +3,4 @@ shell_finder/
 ├── Shell_FinderCinCau.py
 │
 └── payloads/
-    └── shell_payloads.py
+    └── shell_payloads.txt
