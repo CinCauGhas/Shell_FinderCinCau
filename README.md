@@ -1,42 +1,38 @@
 Cara Pakai
-Tool ini dijalankan lewat terminal / Termux.
-Pastikan kamu sudah ada di folder tempat file Shell_FinderCinCau.py berada.
-Command dasar
-Salin kode
-Bash
+Tool ini dijalankan lewat terminal/Termux
+Pastikan kamu sudah berada di folder yang berisi file Shell_FinderCinCau.py
+
+Command Dasar 
 python Shell_FinderCinCau.py https://target.com
-Contoh
-Salin kode
-Bash
+Contoh :
 python Shell_FinderCinCau.py https://example.com
-Kalau target pakai http, ya pakai http.
-Kalau https, pakai https.
-Penjelasan Command
-Salin kode
-Bash
+
+Gunakan:
+http:// jika target pakai HTTP
+https:// jika target pakai HTTPS
+
+Penjelasan Command :
 python Shell_FinderCinCau.py https://target.com
+
+Keterangan:
 python → menjalankan Python
 Shell_FinderCinCau.py → file utama tool
-https://target.com → target website yang mau dicek
-Tool bakal otomatis:
-ambil daftar payload dari shell_payloads.txt
-cek satu-satu ke target
-nampilin hasil di terminal
-Kalau Salah Pakai
-Kalau command kurang target, bakal keluar pesan:
+https://target.com → target website yang ingin dicek
+Saat dijalankan, tool akan:
+
+membaca payload dari shell_payloads.txt
+mengecek satu per satu ke target
+menampilkan hasil scan langsung di terminal
+Jika Salah Menggunakan Command
+Jika target tidak diisi, akan muncul pesan:
 Salin kode
 
 Usage : python Shell_FinderCinCau.py https://target.com
-Artinya tinggal tambahin URL target aja.
-Tips
-Jangan pakai slash di akhir URL
+Artinya kamu hanya perlu menambahkan URL target di belakang command.
+Tips Penggunaan
+
+Jangan gunakan slash (/) di akhir URL
 ❌ https://target.com/
 ✅ https://target.com
-Payload bisa kamu edit sendiri di:
-Salin kode
-
+Payload bisa kamu edit atau tambahkan sendiri di file :
 shell_payloads.txt
-Catatan
-Tool ini cuma ngecek shell yang sudah ada.
-Bukan upload, bukan exploit.
-Gunakan hanya di target yang kamu punya izin.
